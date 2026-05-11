@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "bug-triage": {
+      "command": "python3",
+      "args": [
+        "/Users/aiden-kwak/Desktop/Personal/mcpvsskills/mcp_server/bug_triage_server.py"
+      ]
+    }
+  }
+}

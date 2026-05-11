@@ -47,16 +47,13 @@ LLM 에이전트를 보강하는 두 메커니즘 — Model Context Protocol(MCP
 ├── data/
 │   ├── seed_db.py               # 결정론적 시드 스크립트
 │   └── bugs.db                  # 생성된 SQLite 데이터베이스
-├── scenarios/
-│   └── SCENARIOS.md             # 조건별 실행 프로토콜
 ├── expected_outputs/            # 조건별 기준 출력
 │   ├── scenario_1_baseline.md
 │   ├── scenario_2_skill_only.md
 │   ├── scenario_3_mcp_only.md
 │   └── scenario_4_both.md
 ├── DATASET.md                   # 데이터셋 명세 및 삽입 패턴
-├── REPORT.md                    # 관측 출력에 대한 분석
-└── RUNBOOK.md                   # 재현 절차
+└── REPORT.md                    # 관측 출력에 대한 분석
 ```
 
 ### MCP Server
@@ -128,7 +125,7 @@ cp -r skill/bug-triage ~/.claude/skills/
 
 ### 5. Run the Four Conditions
 
-각 조건에 대해 위 표에 따라 MCP 등록 여부와 Skill 가용성을 토글한 뒤 고정 프롬프트를 발화한다. 조건별 상세 프로토콜은 `scenarios/SCENARIOS.md` 에 기술되어 있으며, 기준 출력은 `expected_outputs/` 에 수록되어 있다.
+위 표에 따라 MCP 등록 여부와 Skill 가용성을 토글한 뒤 동일한 프롬프트를 발화한다. 조건별 기준 출력은 `expected_outputs/` 에 수록되어 있으며, 조건 간 비교 분석은 `REPORT.md` 에 정리되어 있다.
 
 ## Results
 
@@ -154,10 +151,9 @@ C3 → C4 의 대비는 Skill 의 기여를 국소화한다. 데이터와 모델
 - `mcp_server/bug_triage_server.py` — MCP 서버 구현
 - `skill/bug-triage/SKILL.md` — Skill 정의
 - `data/seed_db.py` — 데이터셋 생성기
-- `scenarios/SCENARIOS.md` — 조건별 실행 프로토콜
-- `expected_outputs/scenario_{1..4}_*.md` — 기준 출력
-- `REPORT.md` — 분석
-- `RUNBOOK.md` — 재현 노트
+- `expected_outputs/scenario_{1..4}_*.md` — 조건별 기준 출력
+- `DATASET.md` — 데이터셋 명세 및 삽입 패턴
+- `REPORT.md` — 조건 간 비교 분석
 
 ## License
 

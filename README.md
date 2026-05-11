@@ -154,7 +154,3 @@ C3 → C4 의 대비는 Skill 의 기여를 국소화한다. 데이터와 모델
 - `expected_outputs/scenario_{1..4}_*.md` — 조건별 기준 출력
 - `DATASET.md` — 데이터셋 명세 및 삽입 패턴
 - `REPORT.md` — 조건 간 비교 분석
-
-## License
-
-본 저장소는 연구 및 교육 목적으로 제공된다.
